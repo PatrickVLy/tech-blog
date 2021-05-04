@@ -1,0 +1,26 @@
+<div class="text-left">
+  <h2>{{title}}</h2>
+  <p>{{entry}}</p>
+  <p>Written by {{user.name}} on {{format_date date_created}}</p>
+</div>
+
+<div class ="text-center">
+    <form class="new-comment-form">
+      <div class="form-group">
+        <h3>leave a comment</h3>
+        <textarea class="form-input" id="comment" name="comment"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">comment</button>
+      </div>
+    </form>
+
+</div>
+
+<div class="text-left">
+  <h2>Comments</h2>
+  <p>{{commentary}}</p>
+  <p>Written by {{user.name}} on {{format_date date_created}}</p>
+</div>
+
+<script src="./js/comment.js"></script>
