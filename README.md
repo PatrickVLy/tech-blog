@@ -15,6 +15,32 @@
 <a name="descriptipn"></a>
 ## Description
 This application is essentially a blog/open forum where any user can sign up and post a blog entry to the main page. 
+
+### Code Snippet:
+```
+const newPost = async (event) => {
+  event.preventDefault();
+
+  const title = document.querySelector('#post-title').value.trim();
+  const entry = document.querySelector('#post-entry').value.trim();
+
+  if (title && entry) {
+    const response = await fetch(`/api/posts`, {
+      method: 'POST',
+      body: JSON.stringify({ title, entry }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    } else {
+      alert('Failed to create post');
+    }
+  }
+};
+```
     
 <a name="installation"></a>
 ## Installation
